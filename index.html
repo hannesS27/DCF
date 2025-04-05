@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DCF | DJ Caveman Festival</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Creepster&family=Press+Start+2P&display=swap');
+        
+        body {
+            background-color: #000;
+            color: #e0e0e0;
+            font-family: 'Press Start 2P', cursive;
+            overflow-x: hidden;
+        }
+        
+        .cave-bg {
+            background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPgogIDxmaWx0ZXIgaWQ9Im5vaXNlIj4KICAgIDxmZVR1cmJ1bGVuY2UgdHlwZT0iZnJhY3RhbE5vaXNlIiBiYXNlRnJlcXVlbmN5PSIwLjA1IiBudW1PY3RhdmVzPSI1IiBzdGl0Y2hUaWxlcz0ic3RpdGNoIi8+CiAgICA8ZmVDb2xvck1hdHJpeCB0eXBlPSJzYXR1cmF0ZSIgdmFsdWVzPSIwIi8+CiAgPC9maWx0ZXI+CiAgPHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsdGVyPSJ1cmwoI25vaXNlKSIgb3BhY2l0eT0iMC4wNSIvPgo8L3N2Zz4=');
+            position: relative;
+        }
+        
+        .title-font {
+            font-family: 'Creepster', cursive;
+            text-shadow: 0 0 10px #ff6600, 0 0 20px #ff3300;
+        }
+        
+        .ticket {
+            background: linear-gradient(135deg, #1a1a1a 0%, #000 100%);
+            border: 2px solid #ff6600;
+            box-shadow: 0 0 20px rgba(255, 102, 0, 0.5);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .ticket::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, #ff6600, #ff3300, #ff6600);
+            animation: borderGlow 3s infinite linear;
+        }
+        
+        .ticket::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, #ff6600, #ff3300, #ff6600);
+            animation: borderGlow 3s infinite linear reverse;
+        }
+        
+        @keyframes borderGlow {
+            0% { background-position: 0% 50%; }
+            100% { background-position: 100% 50%; }
+        }
+        
+        .caveman-icon {
+            animation: float 4s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+        
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
+        .flicker {
+            animation: flicker 5s infinite alternate;
+        }
+        
+        @keyframes flicker {
+            0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+                opacity: 1;
+            }
+            20%, 22%, 24%, 55% {
+                opacity: 0.5;
+            }
+        }
+        
+        .cave-wall {
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><path d="M0,0 L100,0 L100,100 L0,100 Z" fill="none" stroke="%23ff6600" stroke-width="2" stroke-dasharray="5,5"/></svg>');
+            background-size: 50px 50px;
+        }
+    </style>
+</head>
+<body class="cave-bg min-h-screen">
+    <div class="container mx-auto px-4 py-12">
+        <!-- Header with animated DJ Caveman -->
+        <header class="flex flex-col items-center mb-12">
+            <div class="caveman-icon mb-6">
+                <i class="fas fa-user-secret text-8xl text-amber-600"></i>
+            </div>
+            <h1 class="title-font text-5xl md:text-7xl text-center text-amber-500 mb-4 flicker">
+                DJ CAVEMAN FESTIVAL
+            </h1>
+            <div class="flex items-center space-x-4">
+                <div class="w-16 h-1 bg-amber-600"></div>
+                <span class="text-lg text-amber-400">DCF</span>
+                <div class="w-16 h-1 bg-amber-600"></div>
+            </div>
+        </header>
+        
+        <!-- Main Ticket Section -->
+        <main class="max-w-4xl mx-auto">
+            <div class="ticket rounded-lg p-8 md:p-12 mb-16 pulse">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- Event Details -->
+                    <div class="space-y-6">
+                        <h2 class="text-3xl text-amber-400 mb-6">EINTRITTSKARTE</h2>
+                        
+                        <div class="space-y-1">
+                            <p class="text-sm text-gray-400">DJ:</p>
+                            <p class="text-2xl text-amber-300">DJ CAVEMAN</p>
+                        </div>
+                        
+                        <div class="space-y-1">
+                            <p class="text-sm text-gray-400">DATUM:</p>
+                            <p class="text-xl text-white">05.04.2025</p>
+                        </div>
+                        
+                        <div class="space-y-1">
+                            <p class="text-sm text-gray-400">EINLASS:</p>
+                            <p class="text-xl text-white">17:00 UHR</p>
+                        </div>
+                        
+                        <div class="space-y-1">
+                            <p class="text-sm text-gray-400">ORT:</p>
+                            <p class="text-xl text-white">URACHER STR. 16</p>
+                            <p class="text-xl text-white">WITTLINGEN</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Ticket Visual -->
+                    <div class="flex flex-col items-center justify-center cave-wall rounded-lg p-6 border-2 border-amber-800 border-dashed">
+                        <div class="text-center mb-6">
+                            <i class="fas fa-ticket-alt text-6xl text-amber-500 mb-4"></i>
+                            <p class="text-xs text-amber-300">VOLLSTÄNDIG AUSGEPRÄGT</p>
+                        </div>
+                        
+                        <div class="w-full h-12 bg-gradient-to-r from-amber-900 via-amber-800 to-amber-900 rounded flex items-center justify-center mb-6">
+                            <div class="w-full h-1 bg-amber-600"></div>
+                        </div>
+                        
+                        <div class="text-center">
+                            <p class="text-xs text-gray-400 mb-2">SCAN ME</p>
+                            <div class="inline-block p-2 bg-white rounded">
+                                <i class="fas fa-qrcode text-4xl text-black"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Additional Info -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+                <div class="bg-gray-900 bg-opacity-70 p-6 rounded-lg border border-amber-800">
+                    <h3 class="text-amber-400 mb-3"><i class="fas fa-beer mr-2"></i> GETRÄNKE</h3>
+                    <p class="text-sm text-gray-300">Urzeitliche Cocktails & Höhlenbräu</p>
+                </div>
+                
+                <div class="bg-gray-900 bg-opacity-70 p-6 rounded-lg border border-amber-800">
+                    <h3 class="text-amber-400 mb-3"><i class="fas fa-utensils mr-2"></i> ESSEN</h3>
+                    <p class="text-sm text-gray-300">Gegrilltes Mammut & Beerenbuffet</p>
+                </div>
+                
+                <div class="bg-gray-900 bg-opacity-70 p-6 rounded-lg border border-amber-800">
+                    <h3 class="text-amber-400 mb-3"><i class="fas fa-music mr-2"></i> MUSIK</h3>
+                    <p class="text-sm text-gray-300">Stone Age Beats & Tribal Techno</p>
+                </div>
+            </div>
+            
+            <!-- Countdown -->
+            <div class="text-center mb-12">
+                <h3 class="text-xl text-amber-400 mb-4">COUNTDOWN ZUM URKNALL</h3>
+                <div id="countdown" class="flex justify-center space-x-4 text-2xl">
+                    <div class="bg-amber-900 bg-opacity-70 px-4 py-2 rounded">
+                        <span id="days">00</span>
+                        <span class="text-sm">TAGE</span>
+                    </div>
+                    <div class="bg-amber-900 bg-opacity-70 px-4 py-2 rounded">
+                        <span id="hours">00</span>
+                        <span class="text-sm">STD</span>
+                    </div>
+                    <div class="bg-amber-900 bg-opacity-70 px-4 py-2 rounded">
+                        <span id="minutes">00</span>
+                        <span class="text-sm">MIN</span>
+                    </div>
+                    <div class="bg-amber-900 bg-opacity-70 px-4 py-2 rounded">
+                        <span id="seconds">00</span>
+                        <span class="text-sm">SEK</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Warning -->
+            <div class="text-center text-xs text-amber-600 mb-8">
+                <p>DIESES TICKET IST EINMALIG UND NICHT ÜBERTRAGBAR</p>
+                <p>BEI VERLUST KEIN ERSATZ MÖGLICH</p>
+            </div>
+        </main>
+        
+        <!-- Footer -->
+        <footer class="text-center text-sm text-gray-600 mt-12">
+            <p>© 2025 DJ CAVEMAN FESTIVAL | ALLE RECHTE VORBEHALTEN</p>
+            <p class="mt-2">MADE WITH <i class="fas fa-heart text-amber-600"></i> IN THE STONE AGE</p>
+        </footer>
+    </div>
+
+    <script>
+        // Countdown to the event
+        function updateCountdown() {
+            const eventDate = new Date('April 5, 2025 17:00:00').getTime();
+            const now = new Date().getTime();
+            const distance = eventDate - now;
+            
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+            
+            document.getElementById('days').innerText = days.toString().padStart(2, '0');
+            document.getElementById('hours').innerText = hours.toString().padStart(2, '0');
+            document.getElementById('minutes').innerText = minutes.toString().padStart(2, '0');
+            document.getElementById('seconds').innerText = seconds.toString().padStart(2, '0');
+        }
+        
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+        
+        // Add some random cave sounds occasionally
+        function playRandomSound() {
+            const sounds = [
+                'https://assets.mixkit.co/sfx/preview/mixkit-cave-echo-943.mp3',
+                'https://assets.mixkit.co/sfx/preview/mixkit-dripping-water-in-a-cave-125.mp3',
+                'https://assets.mixkit.co/sfx/preview/mixkit-stone-rolling-1492.mp3'
+            ];
+            
+            if(Math.random() > 0.7) {
+                const sound = new Audio(sounds[Math.floor(Math.random() * sounds.length)]);
+                sound.volume = 0.2;
+                sound.play();
+            }
+            
+            setTimeout(playRandomSound, 30000 + Math.random() * 60000);
+        }
+        
+        // Start sound after user interaction
+        document.addEventListener('click', function() {
+            playRandomSound();
+        }, { once: true });
+        
+        // Add flickering effect to random elements
+        setInterval(function() {
+            const elements = document.querySelectorAll('.flicker');
+            elements.forEach(el => {
+                if(Math.random() > 0.8) {
+                    el.style.animation = 'none';
+                    setTimeout(() => {
+                        el.style.animation = 'flicker 5s infinite alternate';
+                    }, 100);
+                }
+            });
+        }, 5000);
+    </script>
+</body>
+</html>
